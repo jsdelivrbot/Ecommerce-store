@@ -11,4 +11,4 @@ var itemsSchema = new mongoose.Schema({
 
 var itemsModel = mongoose.model('Items', itemsSchema);
 
-module.exorts = itemsModel;
+module.exports = itemsModel;
