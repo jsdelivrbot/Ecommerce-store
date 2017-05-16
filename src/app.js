@@ -1,78 +1,21 @@
-var express = require('express');
-var session = require('express-session')
-var parser = require('body-parser');
-var router = require('./api/index')
-var passport = require('passport')
-var FaceBookStrategy = require('passport-facebook')
-var FaceBookConfig = require('./config')
-var app = express();
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
 
-var Users = require('./models/users')
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <div className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h2>Welcome to React</h2>
+        </div>
+        <p className="App-intro">
+          To get started, edit <code>src/App.js</code> and save to reload.
+        </p>
+      </div>
+    );
+  }
+}
 
-require('./database')
-require('./seed')
-
-app.use(express.static('public'))
-
-app.use(session({
-    secret: FaceBookConfig.secret,
-    resave: false,
-    saveUninitialized: false
-}))
-
-app.use(passport.initialize());
-app.use(passport.session());
-
-passport.use('facebook', new FaceBookStrategy({
-clientID: FaceBookConfig.clientID,
-clientSecret: FaceBookConfig.clientSecret,
-callbackURL: 'http://localhost:3000/auth/facebook/callback',
-profileFields: []
-}, (accessToken, refreshToken, profile, done) => {
-  var userData = [];
-Users.findOne({'id': profile.id}, {'id': false}, function(err, user) {
-    if (err) {
-        return console.log(err)
-    }
-    if (!user) {
-        Users.create({
-            name: profile.displayName,
-            id: profile.id,
-            wishlist: [],
-            cart: []
-        }, function(err, user){
-          user.id = null;
-          done(null, user)
-        })
-    }
-    else if(user){
-      done(null, user)
-    }
-})
-}))
-
-
-
-
-passport.serializeUser((user, done) => {
-    return done(null, user)
-})
-passport.deserializeUser((user, done) => {
-    return done(null, user)
-})
-
-app.use(parser.json())
-app.use('/api', router)
-
-
-
-app.get('/auth/facebook', passport.authenticate('facebook'));
-
-app.get('/auth/facebook/callback',
-    passport.authenticate('facebook'), (req, res) => {
-      res.status(200).json(req.user)
-    });
-
-app.listen(3000, () => {
-    console.log('App is listening on port: 3000')
-})
+export default App;
