@@ -5,19 +5,19 @@ var Items = require('./models/items');
 var products = [
   {
     name: 'Shirt',
-    price: '$15.00',
+    price: '15.00',
     imgSrc: 'blah blah',
     description: 'its a shirt'
   },
   {
     name: 'Hat',
-    price: '$5.00',
+    price: '5.00',
     imgSrc: 'blah blah',
     description: 'its a hat'
   },
   {
     name: 'Jacket',
-    price: '$25.00',
+    price: '25.00',
     imgSrc: 'blah blah',
     description: 'its a jacket'
   },

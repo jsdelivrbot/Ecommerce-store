@@ -2,6 +2,7 @@
 var express = require('express');
 var router = express.Router();
 var Items = require('../models/items')
+var Users = require('../models/users')
 
 router.get('/products', (req, res) => {
   Items.find({}, (err, products) => {
