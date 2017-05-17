@@ -1,0 +1,6 @@
+.nav-wrap{
+  height: 60px;
+  width: 100%;
+  border-bottom: black solid 1px;
+  display: flex;
+}
