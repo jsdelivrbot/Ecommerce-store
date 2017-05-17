@@ -1,7 +1,20 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import './index.css';
+
+import Home from './components/Home/Home.js'
+
+import './styles.css'
+
+
+class App extends Component {
+  render(){
+    return(
+      <div>
+        <Home/>
+      </div>
+    )
+  }
+}
 
 ReactDOM.render(
   <App />,
