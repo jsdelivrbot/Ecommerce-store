@@ -1,0 +1,17 @@
+.card-wrap{
+  width: 170px;
+  height: auto;
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+
+.card-wrap img{
+  width: 100%;
+}
+
+.card-wrap a{
+  font-size: 15px;
+  color: #004294;
+  text-decoration: none;
+}
