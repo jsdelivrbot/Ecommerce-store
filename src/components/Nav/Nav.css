@@ -13,6 +13,10 @@
   background-color: white;
 }
 
+#home-link{
+  text-decoration: none;
+}
+
 #nav-wrap h1{
   font-size: 25px;
   font-family: 'Archivo Black', sans-serif;

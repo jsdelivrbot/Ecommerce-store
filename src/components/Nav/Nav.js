@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Link } from 'react-router-dom'
 import './Nav.css'
 
 class Nav extends Component{
@@ -28,7 +28,7 @@ class Nav extends Component{
     return(
       <div>
         <div id="nav-wrap">
-          <h1>devGear</h1>
+          <Link id="home-link" to="/"><h1>devGear</h1></Link>
           <div id="hamburger-button" onClick={this.slideDown}>
             <span></span>
             <span></span>

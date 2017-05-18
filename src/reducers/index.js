@@ -35,11 +35,7 @@ function manageStore(store=defaultStore, action){
       return store = Object.assign({}, store, newId)
 
     case 'ADD_TO_GUEST_CART':
-    if(action.payload){
-      store.guestCart.push(action.payload)
-      return store
-    }
-    break;
+      return store = Object.assign({}, store, {guestCart: store.guestCart.concat(action.payload)})
 
     case 'REMOVE_FROM_GUEST_CART':
     if(action.payload){
