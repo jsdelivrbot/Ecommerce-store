@@ -31,10 +31,15 @@ class ProductDetails extends Component{
       var cartData = store.getState().guestCart;
       for(var i = 0; i < cartData.length; i++){
         if(cartData[i] === this.state.data._id){
+          document.getElementById('cart-button').style.width = '200px'
+          document.getElementById('cart-button').innerHTML = 'Already in the cart'
+          document.getElementById('cart-button').style.cursor = 'not-allowed'
           return
         }
       }
       store.dispatch({type: 'ADD_TO_GUEST_CART', payload: this.state.data._id})
+      document.getElementById('cart-button').style.width = '140px'
+      document.getElementById('cart-button').innerHTML = 'Added to cart'
     }
   }
 

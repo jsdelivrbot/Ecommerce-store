@@ -10,7 +10,7 @@ class Nav extends Component{
     }
   }
 
-  slideDown = () => {
+  slide = () => {
     if(this.state.opened){
       document.getElementById('hamburger-menu').style.animationName = "slide-up"
       this.setState({
@@ -29,7 +29,7 @@ class Nav extends Component{
       <div>
         <div id="nav-wrap">
           <Link id="home-link" to="/"><h1>devGear</h1></Link>
-          <div id="hamburger-button" onClick={this.slideDown}>
+          <div id="hamburger-button" onClick={this.slide}>
             <span></span>
             <span></span>
             <span></span>
