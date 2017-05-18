@@ -5,7 +5,7 @@ import './App.css'
 
 import Nav from '../Nav/Nav'
 import Home from '../Home/Home'
-import ProductCard from '../ProductCard/ProductCard'
+import ProductDetails from '../ProductDetails/ProductDetails'
 
 class App extends Component {
   render(){
@@ -14,7 +14,7 @@ class App extends Component {
         <div>
           <Route path="/" component={Nav}/>
           <Route exact path="/" component={Home}/>
-          <Route exact path="/productCard" component={ProductCard}/>
+          <Route exact path="/product" component={ProductDetails}/>
         </div>
       </Router>
     )

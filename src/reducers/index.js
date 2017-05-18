@@ -11,12 +11,12 @@ function manageStore(store=defaultStore, action){
     case 'UPDATE_LOGGED_IN':
     if(action.payload === 'success'){
       store.loggedIn = true;
+      return store
     }
     else{
       store.loggedIn = false;
+      return store
     }
-    console.log(store.loggedIn)
-    break;
 
     case 'STORE_USER_INF0':
     if(action.payload){
@@ -26,34 +26,32 @@ function manageStore(store=defaultStore, action){
       user.name = data.name;
       user.wishlist = data.wishlist;
       user.cart = data.cart;
+      return store
     }
-    console.log(store.userInfo)
     break;
 
     case 'UPDATE_PRODUCT_ID':
-    if(action.payload){
-      store.productId = action.payload;
-    }
-    console.log(store.productId)
-    break;
+      var newId = {productId: action.payload}
+      return store = Object.assign({}, store, newId)
 
     case 'ADD_TO_GUEST_CART':
     if(action.payload){
       store.guestCart.push(action.payload)
+      return store
     }
-    console.log(store.guestCart)
     break;
 
     case 'REMOVE_FROM_GUEST_CART':
     if(action.payload){
       for(var i = 0; i < store.guestCart.length; i++){
         if(store.guestCart[i] === action.payload){
-          store.guestCart.splice(i, 1);
+          return store.guestCart.splice(i, 1);
         }
       }
     }
-    console.log(store.guestCart)
     break;
+    default:
+      return store
   }
 }
 export default manageStore

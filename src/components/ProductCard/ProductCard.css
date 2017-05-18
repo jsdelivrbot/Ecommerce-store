@@ -1,17 +1,26 @@
+.product-link{
+  text-decoration: none;
+}
+
 .card-wrap{
   width: 170px;
   height: auto;
   text-align: center;
   font-size: 25px;
   margin-bottom: 30px;
+  color: #004294;
 }
 
 .card-wrap img{
   width: 100%;
 }
 
-.card-wrap a{
-  font-size: 15px;
+.card-wrap p:nth-child(2){
+  color: black;
+}
+
+.fake-link{
+  font-size: 20px;
   color: #004294;
   text-decoration: none;
 }
