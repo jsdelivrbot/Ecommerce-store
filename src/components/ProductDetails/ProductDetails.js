@@ -31,8 +31,8 @@ class ProductDetails extends Component{
       var cartData = store.getState().guestCart;
       for(var i = 0; i < cartData.length; i++){
         if(cartData[i] === this.state.data._id){
-          document.getElementById('cart-button').style.width = '200px'
-          document.getElementById('cart-button').innerHTML = 'Already in the cart'
+          document.getElementById('cart-button').style.width = '180px'
+          document.getElementById('cart-button').innerHTML = 'Already in cart'
           document.getElementById('cart-button').style.cursor = 'not-allowed'
           return
         }

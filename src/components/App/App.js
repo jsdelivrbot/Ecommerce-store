@@ -5,6 +5,7 @@ import './App.css'
 
 import Nav from '../Nav/Nav'
 import Home from '../Home/Home'
+import Cart from '../Cart/Cart'
 import ProductDetails from '../ProductDetails/ProductDetails'
 
 class App extends Component {
@@ -15,6 +16,7 @@ class App extends Component {
           <Route path="/" component={Nav}/>
           <Route exact path="/" component={Home}/>
           <Route exact path="/product" component={ProductDetails}/>
+          <Route exact path="/cart" component={Cart}/>
         </div>
       </Router>
     )

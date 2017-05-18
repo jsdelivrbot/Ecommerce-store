@@ -38,13 +38,10 @@ function manageStore(store=defaultStore, action){
       return store = Object.assign({}, store, {guestCart: store.guestCart.concat(action.payload)})
 
     case 'REMOVE_FROM_GUEST_CART':
-    if(action.payload){
-      for(var i = 0; i < store.guestCart.length; i++){
-        if(store.guestCart[i] === action.payload){
-          return store.guestCart.splice(i, 1);
-        }
-      }
-    }
+    var updatedCart = store.guestCart.filter((num) => {
+      return num !== action.payload
+    })
+    return store = Object.assign({}, store, {guestCart: updatedCart})
     break;
     default:
       return store

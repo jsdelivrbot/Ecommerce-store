@@ -38,9 +38,9 @@ class Nav extends Component{
         <div id="nav-filler"></div>
         <div id="hamburger-menu">
           <ul>
-            <li><a href="/auth/facebook"><img src="https://www.codenameone.com/img/blog/facebook-login-blue.png" alt=""/></a></li>
-            <li>My Wishlist</li>
-            <li>My Cart</li>
+            <li onClick={this.slide}><a href="/auth/facebook"><img src="https://www.codenameone.com/img/blog/facebook-login-blue.png" alt=""/></a></li>
+            <li onClick={this.slide}><Link to="/">My Wishlist</Link></li>
+            <li onClick={this.slide}><Link to="/cart">My Cart</Link></li>
           </ul>
         </div>
       </div>
