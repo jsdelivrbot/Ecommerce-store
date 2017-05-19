@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 var itemsSchema = new mongoose.Schema({
   name: String,
   price: String,
-  imgSrc: String,
+  imgUrl: String,
   description: String
 })
 
