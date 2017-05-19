@@ -42,7 +42,6 @@ function manageStore(store=defaultStore, action){
       return num !== action.payload
     })
     return store = Object.assign({}, store, {guestCart: updatedCart})
-    break;
     default:
       return store
   }

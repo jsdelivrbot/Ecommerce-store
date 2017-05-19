@@ -39,8 +39,8 @@ class Nav extends Component{
         <div id="hamburger-menu">
           <ul>
             <li onClick={this.slide}><a href="/auth/facebook"><img src="https://www.codenameone.com/img/blog/facebook-login-blue.png" alt=""/></a></li>
-            <li onClick={this.slide}><Link to="/">My Wishlist</Link></li>
-            <li onClick={this.slide}><Link to="/cart">My Cart</Link></li>
+            <li onClick={this.slide}><Link className="nav-link" to="/">My Wishlist</Link></li>
+            <li onClick={this.slide}><Link className="nav-link" to="/cart">My Cart</Link></li>
           </ul>
         </div>
       </div>

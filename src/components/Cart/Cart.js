@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import {bindActionCreators} from 'redux'
 import { connect } from 'react-redux'
 
 import './Cart.css'
@@ -18,6 +17,7 @@ class Cart extends Component{
           return <CartProduct key={Math.random()} info={{price: obj.price, imgUrl: obj.imgUrl, description: obj.description, id: obj._id}}/>
         }
       }
+      return null
     })
     return(
       <div>
@@ -29,7 +29,7 @@ class Cart extends Component{
 
 function mapStateToProps(state){
   return{
-    data: state
+    data: state.guestCart
   }
 }
 
