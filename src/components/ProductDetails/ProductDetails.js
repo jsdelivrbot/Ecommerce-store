@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
+import axios from 'axios'
 
 import './ProductDetails.css'
-import data from '../Home/data'
 import store from '../../index'
 
 class ProductDetails extends Component{
   constructor(){
     super();
     this.state = {
-      data: null
+      data: {
+        imgUrl: '',
+        price: '',
+        description: ''
+      }
     }
   }
 
@@ -16,13 +20,13 @@ class ProductDetails extends Component{
     if(!store.getState().productId){
       window.location.href = '/'
     }
-    data.map(product => {
-      if(product._id === store.getState().productId){
-        this.setState({
-          data: product
-        })
-      }
-      return 'State updated'
+    var id = store.getState().productId
+    axios.get('/api/product/id/' + id).then((response)=>{
+      this.setState({
+        data: response.data[0]
+      })
+      document.getElementById('details-wrap').style.display = 'flex'
+      console.log(this.state.data)
     })
   }
 

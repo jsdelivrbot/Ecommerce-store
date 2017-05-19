@@ -16,7 +16,6 @@ class Home extends Component {
 
   componentDidMount(){
     axios.get('/api/products').then((response) => {
-      console.log(response.data)
       this.setState({
         data: response.data.products
       })

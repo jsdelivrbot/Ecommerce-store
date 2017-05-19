@@ -13,4 +13,13 @@ router.get('/products', (req, res) => {
   })
 })
 
+router.get('/product/id/:id', (req, res) => {
+  Items.find({'_id': req.params.id}, (err, product) => {
+    if(err){
+      return res.status(500).json({err: err.message})
+    }
+    res.status(200).send(product)
+  })
+})
+
 module.exports = router;
