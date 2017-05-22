@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { connect } from 'react-redux'
 import './Home.css'
 
+import store from '../../index'
 import data from './data'
 
 import ProductCard from '../ProductCard/ProductCard'
@@ -14,21 +16,18 @@ class Home extends Component {
     }
   }
 
-  componentDidMount(){
-    axios.get('/api/products').then((response) => {
-      this.setState({
-        data: response.data.products
+  componentWillMount(){
+    if(!this.props.data.length){
+      axios.get('/api/products').then((response) => {
+        store.dispatch({type: 'ADD_PRODUCTS', payload: response.data.products})
       })
-    })
+    }
   }
 
   render(){
-    var Products = null;
-    if(this.state.data){
-      Products = this.state.data.map((obj) => {
-          return <ProductCard key={Math.random()} info={{price: obj.price, imgUrl: obj.imgUrl, _id: obj._id}}/>
-      })
-    }
+    var Products = this.props.data.map(obj => {
+      return <ProductCard info={{imgUrl: obj.imgUrl, price: obj.price, _id: obj._id}}/>
+    })
       return(
           <div id="home-wrap">
             {Products}
@@ -37,4 +36,10 @@ class Home extends Component {
       }
     }
 
-export default Home
+    function mapStateToProps(state){
+      return {
+        data: state.products
+      }
+    }
+
+export default connect(mapStateToProps)(Home)

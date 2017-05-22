@@ -2,6 +2,7 @@
   "name": "Ecommerce-store",
   "version": "0.1.0",
   "private": true,
+  "main": "server/app.js",
   "devDependencies": {
     "react-scripts": "0.9.5"
   },
@@ -9,6 +10,7 @@
     "assert": "^1.4.1",
     "axios": "^0.16.1",
     "body-parser": "^1.17.1",
+    "cors": "^2.8.3",
     "express": "^4.15.2",
     "express-session": "^1.15.2",
     "mongoose": "^4.9.9",

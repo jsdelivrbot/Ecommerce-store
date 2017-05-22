@@ -5,6 +5,7 @@ var router = require('./api/index')
 var passport = require('passport')
 var FaceBookStrategy = require('passport-facebook')
 var FaceBookConfig = require('./config')
+var cors = require('cors')
 var app = express();
 
 var Users = require('./models/users')
@@ -42,11 +43,11 @@ Users.findOne({'id': profile.id}, {'id': false}, function(err, user) {
             cart: []
         }, function(err, user){
           user.id = null;
-          done(null, user)
+        return done(null, user)
         })
     }
     else if(user){
-      done(null, user)
+      return done(null, user)
     }
 })
 }))
@@ -63,14 +64,15 @@ passport.deserializeUser((user, done) => {
 
 app.use(parser.json())
 app.use('/api', router)
-
-
+app.use(cors())
 
 app.get('/auth/facebook', passport.authenticate('facebook'));
 
 app.get('/auth/facebook/callback',
-    passport.authenticate('facebook'), (req, res) => {
-      res.status(200).json(req.user)
+    passport.authenticate('facebook', {
+      successRedirect: '/'
+    }), (req, res) => {
+      res.status(200).send(req.user)
     });
 
 app.listen(3000, () => {

@@ -26,7 +26,6 @@ class ProductDetails extends Component{
         data: response.data[0]
       })
       document.getElementById('details-wrap').style.display = 'flex'
-      console.log(this.state.data)
     })
   }
 
