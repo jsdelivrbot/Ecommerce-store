@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import axios from 'axios'
 
 import './Cart.css'
-import Data from '../Home/data'
 import store from '../../index'
 
 import CartProduct from '../CartProduct/CartProduct'

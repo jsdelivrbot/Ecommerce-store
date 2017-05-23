@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import './Home.css'
 
 import store from '../../index'
-import data from './data'
 
 import ProductCard from '../ProductCard/ProductCard'
 

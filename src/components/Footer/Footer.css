@@ -1,0 +1,13 @@
+#footer-wrap{
+  height: 60px;
+  width: 100%;
+  position: relative;
+  bottom: 0px;
+  background-color: white;
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  margin-top: 10px;
+}
