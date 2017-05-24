@@ -4,6 +4,8 @@ import axios from 'axios'
 import './ProductDetails.css'
 import store from '../../index'
 
+import Footer from '../Footer/Footer'
+
 class ProductDetails extends Component{
   constructor(){
     super();
@@ -48,11 +50,14 @@ class ProductDetails extends Component{
 
   render(){
     return(
-      <div id="details-wrap">
-        <img src={this.state.data.imgUrl} alt=""/>
-        <p id="details-price">${this.state.data.price}</p>
-        <p id="details-desc">{this.state.data.description}</p>
-        <div id="cart-button" onClick={this.addToCart}>Add to cart</div>
+      <div>
+        <div id="details-wrap">
+          <img src={this.state.data.imgUrl} alt=""/>
+          <p id="details-price">${this.state.data.price}</p>
+          <p id="details-desc">{this.state.data.description}</p>
+          <div id="cart-button" onClick={this.addToCart}>Add to cart</div>
+        </div>
+        <Footer/>
       </div>
     )
   }

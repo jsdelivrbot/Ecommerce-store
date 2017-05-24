@@ -6,10 +6,23 @@ import './Cart.css'
 import store from '../../index'
 
 import CartProduct from '../CartProduct/CartProduct'
+import Footer from '../Footer/Footer'
 
 class Cart extends Component{
 
+  componentDidMount(){
+    console.log(this.props.data.length)
+    if(this.props.data.length < 3){
+      console.log('absolute')
+      document.getElementById('footer-wrap').style.position = 'absolute'
+      return
+   }
+    console.log('relative')
+     document.getElementById('footer-wrap').style.position = 'relative'
+  }
+
   render(){
+    console.log('rerendered')
     var ids = store.getState().guestCart;
     var storeProducts = store.getState().products;
     var Products = storeProducts.map(product => {
@@ -21,7 +34,10 @@ class Cart extends Component{
     })
     return(
       <div>
-        {Products}
+        <div id="cart-wrap">
+          {Products}
+        </div>
+        <Footer/>
       </div>
     )
   }

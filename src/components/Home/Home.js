@@ -6,6 +6,7 @@ import './Home.css'
 import store from '../../index'
 
 import ProductCard from '../ProductCard/ProductCard'
+import Footer from '../Footer/Footer'
 
 class Home extends Component {
   constructor(){
@@ -28,9 +29,12 @@ class Home extends Component {
       return <ProductCard info={{imgUrl: obj.imgUrl, price: obj.price, _id: obj._id}}/>
     })
       return(
+        <div>
           <div id="home-wrap">
             {Products}
           </div>
+          <Footer/>
+        </div>
         )
       }
     }
