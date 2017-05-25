@@ -5,7 +5,6 @@ var router = require('./api/index')
 var passport = require('passport')
 var FaceBookStrategy = require('passport-facebook')
 var FaceBookConfig = require('./config')
-var port = process.env.PORT || 3000
 var app = express();
 
 var Users = require('./models/users')
@@ -74,6 +73,6 @@ app.get('/auth/facebook/callback',
       res.status(200).send(req.user)
     });
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log('App is listening on port: 3000')
 })
