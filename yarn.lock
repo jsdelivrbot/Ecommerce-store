@@ -4426,6 +4426,10 @@ react-router@^4.1.1:
     prop-types "^15.5.4"
     warning "^3.0.0"
 
+react-script-loader@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/react-script-loader/-/react-script-loader-0.0.1.tgz#9e33c88f26ad7a5cd418553a8d2188b9056dd385"
+
 react-scripts@0.9.5:
   version "0.9.5"
   resolved "https://registry.yarnpkg.com/react-scripts/-/react-scripts-0.9.5.tgz#e9f05c8427e27131662a9b9d7a9786d1ff16bb3f"
