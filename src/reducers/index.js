@@ -49,6 +49,11 @@ function manageStore(store = defaultStore, action) {
                 guestCart: updatedCart
             })
 
+        case 'EMPTY_GUEST_CART':
+          return store = Object.assign({}, store, {
+            guestCart: []
+          })
+
         case 'ADD_PRODUCTS':
             var updatedProducts = store.products.concat(action.payload)
             return store = Object.assign({}, store, {

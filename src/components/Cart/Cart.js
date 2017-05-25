@@ -49,6 +49,13 @@ class Cart extends Component{
     return true
   }
 
+  emptyCart = () => {
+    store.dispatch({type: 'EMPTY_GUEST_CART', payload: null})
+    this.setState({
+      amount: 0.00
+    })
+  }
+
   render(){
     var ids = store.getState().guestCart;
     var storeProducts = store.getState().products;
@@ -68,10 +75,14 @@ class Cart extends Component{
         }
       }
     })
+    var total = this.state.amount.toString().split('');
+    total.splice(2, 0, '.').join('')
+
     return(
       <div>
         <div id="cart-wrap">
           {Products}
+          <p id="total">Total: ${total}</p>
           <StripeCheckout
             token={this.onToken}
             stripeKey="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
@@ -82,7 +93,7 @@ class Cart extends Component{
             locale="auto"
             zipCode={false}
          >
-            <button id="checkout-button">Checkout</button>
+            <button id="checkout-button" onClick={this.emptyCart}>Checkout</button>
          </StripeCheckout>
         </div>
         <Footer/>
