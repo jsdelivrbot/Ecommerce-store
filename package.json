@@ -4,7 +4,6 @@
   "private": true,
   "main": "server/app.js",
   "devDependencies": {
-    "react-scripts": "0.9.5"
   },
   "dependencies": {
     "assert": "^1.4.1",
@@ -17,6 +16,7 @@
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
     "react": "^15.5.4",
+    "react-scripts": "0.9.5",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
     "react-router-dom": "^4.1.1",
