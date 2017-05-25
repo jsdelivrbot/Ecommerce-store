@@ -5,6 +5,7 @@ var router = require('./api/index')
 var passport = require('passport')
 var FaceBookStrategy = require('passport-facebook')
 var FaceBookConfig = require('./config')
+var port = process.env.PORT || 3000
 var app = express();
 
 var Users = require('./models/users')
