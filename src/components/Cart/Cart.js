@@ -38,11 +38,9 @@ class Cart extends Component{
   }
 
   shouldComponentUpdate(nextProps, nextState){
-    console.log('nextProps: ' + nextProps.data + '_____' + 'this.props.data: ' + this.props.data)
     if(nextProps.data !== this.props.data){
       return true
     }
-    console.log('nextState: ' + nextState.amount + '_____' + 'this.state.amount: ' + this.state.amount)
     if(nextState.amount === this.state.amount){
       return false
     }
@@ -52,7 +50,7 @@ class Cart extends Component{
   emptyCart = () => {
     store.dispatch({type: 'EMPTY_GUEST_CART', payload: null})
     this.setState({
-      amount: 0.00
+      amount: 0
     })
   }
 
@@ -76,7 +74,7 @@ class Cart extends Component{
       }
     })
     var total = this.state.amount.toString().split('');
-    total.splice(2, 0, '.').join('')
+    total.splice(total.length - 2, 0, '.').join('')
 
     return(
       <div>
