@@ -68,10 +68,6 @@ passport.deserializeUser((user, done) => {
 app.use(parser.json())
 app.use('/api', router)
 
-app.get('/', function(req, res){
-  res.status(200).redirect('/build/index.html')
-})
-
 app.get('/auth/facebook', passport.authenticate('facebook'));
 
 app.get('/auth/facebook/callback',
