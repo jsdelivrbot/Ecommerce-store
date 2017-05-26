@@ -6,6 +6,7 @@ var passport = require('passport')
 var FaceBookStrategy = require('passport-facebook')
 var FaceBookConfig = require('./config')
 var cors = require('cors')
+var path = require("path");
 var port = process.env.PORT || 3000;
 var app = express();
 
