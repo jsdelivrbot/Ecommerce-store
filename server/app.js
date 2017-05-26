@@ -70,7 +70,7 @@ app.use(parser.json())
 app.use('/api', router)
 
 app.get('/', (req, res) => {
-  console.log(__dirname)
+  res.sendFile('build')
 })
 
 app.get('/auth/facebook', passport.authenticate('facebook'));
