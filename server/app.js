@@ -17,7 +17,11 @@ require('./seed')
 
 app.use(cors())
 
-app.use(express.static('build'))
+process.env.PWD = process.cwd();
+
+app.set('views', path.join(process.env.PWD, 'build'));
+
+app.use(express.static(path.join(process.env.PWD, 'build')));
 
 app.use(session({
     secret: FaceBookConfig.secret,
@@ -68,10 +72,6 @@ passport.deserializeUser((user, done) => {
 
 app.use(parser.json())
 app.use('/api', router)
-
-app.get('/', (req, res) => {
-  res.sendFile('build')
-})
 
 app.get('/auth/facebook', passport.authenticate('facebook'));
 
