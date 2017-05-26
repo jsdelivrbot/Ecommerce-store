@@ -69,7 +69,7 @@ app.use(parser.json())
 app.use('/api', router)
 
 app.get('/', function(req, res){
-  res.status(200).send('Hello')
+  express.static('build')
 })
 
 app.get('/auth/facebook', passport.authenticate('facebook'));
