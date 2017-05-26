@@ -5,6 +5,7 @@ var router = require('./api/index')
 var passport = require('passport')
 var FaceBookStrategy = require('passport-facebook')
 var FaceBookConfig = require('./config')
+var cors = require('cors')
 var port = process.env.PORT || 3000;
 var app = express();
 
@@ -12,6 +13,8 @@ var Users = require('./models/users')
 
 require('./database')
 require('./seed')
+
+app.use(cors())
 
 app.use(express.static('build'))
 
