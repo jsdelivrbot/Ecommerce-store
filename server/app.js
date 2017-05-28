@@ -5,7 +5,6 @@ var router = require('./api/index')
 var passport = require('passport')
 var FaceBookStrategy = require('passport-facebook')
 var FaceBookConfig = require('./config')
-var cors = require('cors')
 var path = require("path");
 var port = process.env.PORT || 3000;
 var app = express();
@@ -14,8 +13,6 @@ var Users = require('./models/users')
 
 require('./database')
 require('./seed')
-
-app.use(cors())
 
 process.env.PWD = process.cwd();
 
@@ -71,6 +68,7 @@ passport.deserializeUser((user, done) => {
 })
 
 app.use(parser.json())
+
 app.use('/api', router)
 
 app.get('/auth/facebook', passport.authenticate('facebook'));
