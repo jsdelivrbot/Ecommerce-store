@@ -46,7 +46,7 @@ class Nav extends Component{
         <div id="nav-filler"></div>
         <div id="hamburger-menu">
           <ul>
-            <li onClick={this.slide}><Link className="nav-link" to="/cart">My Cart</Link></li>
+            <li onClick={this.slide}><Link className="nav-link" to="/cart">Cart</Link></li>
           </ul>
         </div>
       </div>
