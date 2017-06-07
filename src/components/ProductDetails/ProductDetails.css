@@ -36,3 +36,19 @@
   border-radius: 5px;
   cursor: pointer;
 }
+
+@media(min-width: 1000px){
+  #details-wrap{
+    padding-top: 50px;
+    margin-bottom: 40px;
+  }
+  #details-wrap img{
+    width: 300px;
+  }
+  #details-price{
+    font-size: 30px
+  }
+  #details-desc{
+    font-size: 25px
+  }
+}
