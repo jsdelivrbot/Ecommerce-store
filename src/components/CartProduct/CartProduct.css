@@ -36,3 +36,15 @@
   border-radius: 5px;
   cursor: pointer;
 }
+
+@media(min-width: 100px){
+  .cart-product-wrap{
+    justify-content: center;
+  }
+  .cart-product-wrap img{
+    margin-right: 50px;
+  }
+  .cart-info-wrap{
+    width: 100px
+  }
+}

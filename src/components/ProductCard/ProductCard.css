@@ -32,4 +32,7 @@
     margin-right: 25px;
     margin-bottom: 50px
   }
+  .card-wrap img{
+    width: 60%;
+  }
 }
