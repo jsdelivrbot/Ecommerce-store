@@ -42,6 +42,9 @@ class Nav extends Component{
             <span id="second-span"></span>
             <span id="third-span"></span>
           </div>
+          <div id="desktop-nav">
+            <Link className="nav-link" to="/cart">Cart</Link>
+          </div>
         </div>
         <div id="nav-filler"></div>
         <div id="hamburger-menu">

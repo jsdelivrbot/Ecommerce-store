@@ -8,7 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0px 10px; 
+  padding: 0px 10px;
   background-color: white;
 }
 
@@ -138,4 +138,17 @@
 .nav-link{
   text-decoration: none;
   color: black;
+}
+
+#desktop-nav{
+  display: none;
+}
+
+@media(min-width: 1000px){
+  #hamburger-button{
+    display: none;
+  }
+  #desktop-nav{
+    display: block;
+  }
 }
