@@ -57,7 +57,7 @@ class Cart extends Component{
   render(){
     var ids = store.getState().guestCart;
     var storeProducts = store.getState().products;
-    var amount = 0;
+    var amount = 0
     var Products = storeProducts.map(product => {
       for(var i = 0; i < ids.length; i++){
         if(product._id === ids[i]){
